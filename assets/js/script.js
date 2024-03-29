@@ -2,16 +2,16 @@ const horas = document.getElementById('horas');
 const minutos = document.getElementById('min');
 const segundos = document.getElementById('segundos');
 
-function currentTime() {
+function time() {
     const date = new Date();
 
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
+    let hours = date.getHours().toString().padStart(2, 0);
+    let minutes = date.getMinutes().toString().padStart(2, 0);
+    let seconds = date.getSeconds().toString().padStart(2, 0);
 
-    horas.innerText = hours;
-    minutos.innerText = minutes;
-    segundos.innerText = seconds; 
+    horas.textContent = hours;
+    minutos.textContent = minutes;
+    segundos.textContent = seconds; 
 }
 
-setInterval(currentTime, 1000);
+setInterval(time, 1000);
